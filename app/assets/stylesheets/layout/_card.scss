@@ -1,0 +1,26 @@
+.card {
+  height: 200px;
+  text-shadow: 0 1px 3px rgba(2,2,3,3);
+  background-color: #0000ff;
+  color: #f5eb00;
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 3px;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  box-shadow: 10px 5px 5px #f5eb00;
+}
+
+.card a {
+  font-size: 40px;
+  font-family: 'Merriweather Sans', sans-serif;
+  margin: auto;
+  color: #f5eb00;
+  text-align: center;
+}
+
+.title h1 {
+  background-color: #f5eb00;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: #0000ff;
+}

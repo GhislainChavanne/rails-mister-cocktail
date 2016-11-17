@@ -1,38 +1,62 @@
 <div class="navbar-wagon">
-  <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <%= image_tag("cocktail.png") %>
+    <%= image_tag("logo.png") %>
   </a>
 
-  <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <!-- Search form -->
     <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search a cocktail">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
-
-    <!-- Button (call-to-action) -->
-    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Post a cocktail</a>
+    <%= link_to "CREATE A NEW COCKTAIL", new_cocktail_path, class:"navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 </div>
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_url 'cocktail.jpg' %>);">
+<div class="banner">
   <div class="banner-content">
-    <h1>Welcome on Mister Cocktail !</h1>
-    <a class="btn btn-primary btn-lg">Add your cocktail</a>
+    <div class="col-xs-12 text-banner">WELCOME ON MISTER COCKTAIL
+    </div>
   </div>
 </div>
 
-<div class="text-center">
-  <h1>All our Cocktails</h1>
-  <% @cocktails.each do |cocktail| %>
-  <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-  <% end %>
-  <p><%= link_to "Create a new Cocktail", new_cocktail_path %></p>
+
+<div class="container title">
+  <h1 class="text-center">OUR COCKTAILS</h1>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card">
+          <p><%= link_to cocktail.name.upcase, cocktail_path(cocktail) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="container title">
+  <h1 class="text-center">DRINK A COCKTAIL WITH MUSIC !</h1>
+  <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/255144956&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+</div>
+
+<div class="container title">
+  <h1 class="text-center">DRINK A COCKTAIL WITH MUSIC !</h1>
+  <div class="share-links">
+    <a href="#" class="share-link bg-facebook">
+      <i class="fa fa-facebook"></i>
+    </a>
+    <a href="#" class="share-link bg-twitter">
+      <i class="fa fa-twitter"></i>
+    </a>
+    <a href="#" class="share-link bg-email">
+      <i class="fa fa-envelope-o"></i>
+    </a>
+    <a href="#" class="share-link bg-text">
+      <i class="fa fa-mobile"></i>
+    </a>
+  </div>
 </div>
 
 
