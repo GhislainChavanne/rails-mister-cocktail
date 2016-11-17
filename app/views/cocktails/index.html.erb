@@ -1,0 +1,38 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <%= image_tag("cocktail.png") %>
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Search form -->
+    <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search a cocktail">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+
+    <!-- Button (call-to-action) -->
+    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Post a cocktail</a>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_url 'cocktail.jpg' %>);">
+  <div class="banner-content">
+    <h1>Welcome on Mister Cocktail !</h1>
+    <a class="btn btn-primary btn-lg">Add your cocktail</a>
+  </div>
+</div>
+
+<div class="text-center">
+  <h1>All our Cocktails</h1>
+  <% @cocktails.each do |cocktail| %>
+  <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+  <% end %>
+  <p><%= link_to "Create a new Cocktail", new_cocktail_path %></p>
+</div>
+
+
