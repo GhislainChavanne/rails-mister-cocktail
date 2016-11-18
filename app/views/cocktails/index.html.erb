@@ -1,33 +1,25 @@
-<div class="navbar-wagon">
-  <a href="/" class="navbar-wagon-brand">
-    <%= image_tag("logo.png") %>
-  </a>
 
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search a cocktail">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-    <%= link_to "CREATE A NEW COCKTAIL", new_cocktail_path, class:"navbar-wagon-item navbar-wagon-button btn" %>
-  </div>
-</div>
 
-<div class="banner">
+<div class="banner" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('banner.jpg') %>');">
   <div class="banner-content">
-    <div class="col-xs-12 text-banner">WELCOME ON MISTER COCKTAIL
-    </div>
+    <h1>BANANA COCKTAIL</h1>
+    <p>The best BANANA COCKTAILS you can find around the NET</p>
   </div>
 </div>
 
 
-<div class="container title">
-  <h1 class="text-center">OUR COCKTAILS</h1>
+
+<div class="title">
+<h1 class="text-center">OUR BANANA COCKTAILS</h1>
+</div>
+
+
+
+<div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('banana.png') %>');">
           <p><%= link_to cocktail.name.upcase, cocktail_path(cocktail) %></p>
         </div>
       </div>
@@ -36,13 +28,32 @@
 </div>
 
 
-<div class="container title">
-  <h1 class="text-center">DRINK A COCKTAIL WITH MUSIC !</h1>
-  <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/255144956&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+
+
+<div class="title">
+  <h1 class="text-center">DRINK A BANANA COCKTAIL WITH MUSIC !</h1>
 </div>
 
-<div class="container title">
-  <h1 class="text-center">DRINK A COCKTAIL WITH MUSIC !</h1>
+
+
+
+<div class="container round-container"style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('Banana_video.jpg') %>');">
+    <div class="text-center">
+        <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/h3ilLEN1Qew" frameborder="0" allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+
+
+<div class="title">
+  <h1 class="text-center">SHARE OUR PAGE !</h1>
+</div>
+
+
+
+
+<div class="container">
   <div class="share-links">
     <a href="#" class="share-link bg-facebook">
       <i class="fa fa-facebook"></i>

@@ -1,29 +1,45 @@
 
-<div class="container">
-  <div class="text-center">
-    <h1><%= @cocktail.name %></h1>
-    <p><%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete %></p>
-    <p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
-    <p><% @doses.each do |dose| %></p>
-    <p><%= dose.description %> - <%= dose.ingredient.name %></p>
-    <p><%= link_to 'Delete dose', cocktail_dose_path(@cocktail, dose), method: :delete %></p>
-    <% end %>
-      <p><%= link_to 'Back to cocktails', cocktails_path %></p>
+<div class="container show-container"style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('Banana_video.jpg') %>');">
+  <div class="container">
+    <div class="text-center">
+      <h1><%= @cocktail.name %></h1>
+    </div>
   </div>
 </div>
 
 
-<div class="share-links">
-  <a href="#" class="share-link bg-facebook">
-    <i class="fa fa-facebook"></i>
-  </a>
-  <a href="#" class="share-link bg-twitter">
-    <i class="fa fa-twitter"></i>
-  </a>
-  <a href="#" class="share-link bg-email">
-    <i class="fa fa-envelope-o"></i>
-  </a>
-  <a href="#" class="share-link bg-text">
-    <i class="fa fa-mobile"></i>
-  </a>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <h1 class="text-center">DOSES</h1>
+      <% @cocktail.doses.each do |dose| %>
+          <p class="text-center"><%= dose.description %> - <%= dose.ingredient.name %> -
+            <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete do %>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <% end %>
+          </p>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      <div class="text-center">
+        <h1>Add a dose</h1>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <div class="action-bar">
+            <div class="action-description">
+              <%= f.input :description, placeholder: "Description...", label: false %>
+            </div>
+            <div class="ingredient-description">
+              <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "select ingredient", label: false  %>
+            </div>
+          </div>
+          <%= f.button :submit, label: "add a dose", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <%= link_to 'Back to cocktails', cocktails_path %>
+  <%= link_to 'Delete cocktail', cocktail_path(@cocktail), method: :delete %>
 </div>

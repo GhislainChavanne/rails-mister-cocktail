@@ -1,0 +1,42 @@
+.round-container {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-color: #efce31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #0c0066;
+}
+
+.show-container {
+  color: white;
+  text-align: center;
+  height: 25vh;
+  background-color: #efce31;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2%;
+  border: 3px solid #0c0066;
+  font-family: 'Racing Sans One', cursive;
+  margin-top: 10px;
+}
+
+.show-container h1 {
+  font-family: 'Racing Sans One', cursive;
+  font-size: 100px;
+  justify-content: center;
+}
+
+.show-container p {
+  font-size: 20px;
+  justify-content: center;
+}
+
+.round-container h1 {
+  font-family: 'Racing Sans One', cursive;
+  font-size: 90px;
+}
