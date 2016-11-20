@@ -1,7 +1,15 @@
+.align-dose {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .action-bar {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-top: 20px;
+  flex: 0 0 40%;
 }
 
 .action-description {
@@ -13,5 +21,19 @@
   flex: 0 0 40%;
 }
 
+.margin-action-bar {
+  margin-top: 60px;
+}
 
+.action-bar-style {
+  border: 2px solid blue;
+  box-shadow: 10px 10px 5px #656565;
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.action-bar-style h1 {
+  color: white;
+  font-family: 'Racing Sans One', cursive;
+}
 
