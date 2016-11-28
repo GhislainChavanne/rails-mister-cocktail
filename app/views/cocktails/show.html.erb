@@ -9,31 +9,33 @@
 
 
 <div class="container">
-  <div class="row align-dose">
-    <div class="col-xs-12 col-sm-3 margin-action-bar action-bar-style margin-list-dose" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('banana.png') %>');">
-      <h1 class="text-center">DOSES</h1>
-      <% @cocktail.doses.each do |dose| %>
-          <p class="text-center"><%= dose.description %> - <%= dose.ingredient.name %> -
-            <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete do %>
-              <i class="fa fa-trash-o" aria-hidden="true"></i>
-            <% end %>
-          </p>
-      <% end %>
-    </div>
-    <div class="col-xs-12 col-sm-7 margin-action-bar action-bar-style margin-add-dose" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('banana.png') %>');">
-      <div class="text-center">
-        <h1>Add a dose</h1>
-        <%= simple_form_for [@cocktail, @dose] do |f| %>
-          <div class="action-bar">
-            <div class="action-description">
-              <%= f.input :description, placeholder: "Description...", label: false %>
-            </div>
-            <div class="ingredient-description">
-              <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "select ingredient", label: false  %>
-            </div>
-          </div>
-          <%= f.button :submit, label: "add a dose", class:"navbar-wagon-item navbar-wagon-button btn"%>
+  <div class="row">
+    <div class="align-dose">
+      <div class="col-xs-12 col-sm-3 margin-action-bar action-bar-style margin-list-dose" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('banana.png') %>');">
+        <h1 class="text-center">DOSES</h1>
+        <% @cocktail.doses.each do |dose| %>
+            <p class="text-center"><%= dose.description %> - <%= dose.ingredient.name %> -
+              <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete do %>
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              <% end %>
+            </p>
         <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-7 margin-action-bar action-bar-style margin-add-dose" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('banana.png') %>');">
+        <div class="text-center">
+          <h1>Add a dose</h1>
+          <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <div class="action-bar">
+              <div class="action-description">
+                <%= f.input :description, placeholder: "Description...", label: false %>
+              </div>
+              <div class="ingredient-description">
+                <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "select ingredient", label: false  %>
+              </div>
+            </div>
+            <%= f.button :submit, label: "add a dose", class:"navbar-wagon-item navbar-wagon-button btn"%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
